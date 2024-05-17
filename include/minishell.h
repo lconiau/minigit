@@ -16,10 +16,6 @@
 # include <readline/history.h>
 # include "../ft_printf/ft_printf.h"
 
-# define SUCCESS		0
-# define FAILURE	1
-# define TRUE		1
-# define FALSE		0
 
 typedef	enum e_type
 {
@@ -35,8 +31,8 @@ typedef	enum e_type
 
 typedef enum e_error
 {
-	SUCCES = 0,
-	ERROR = 1,
+	SUCCESS = 0,
+	FAILURE = 1,
 	DIRECTORY = 126,
 	CMD = 127,
 	INTERUPT = 130,
@@ -91,10 +87,12 @@ typedef struct s_cmd
 
 typedef struct s_minishell
 {
-	t_env	env;
-	t_cmd	cmd;
+	t_env	*env;
+	t_cmd	*h_cmd;
+	t_cmd	*cmd;
 	t_sig	sig;
 	char	*name;
+	t_token	*h_token;
 	t_token	*token;
 }	t_minishell;
 

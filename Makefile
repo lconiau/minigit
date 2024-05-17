@@ -20,7 +20,8 @@ COMMANDS_DIR    =       $(SRC_PATH)parsing.c \
                         	$(SRC_PATH)main.c \
                        		$(SRC_PATH)string_utils.c \
 							$(SRC_PATH)abst_syn_tree.c\
-
+INIT	=	$(SRC_PATH)init/init_env.c\
+				$(SRC_PATH)init/init_shell.c\
 SRCS    =       $(COMMANDS_DIR)
 
 DEPS = $(OBJS:.o=.d)

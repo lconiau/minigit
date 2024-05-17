@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lconiau <lconiau@student.42.fr>            +#+  +:+       +#+        */
+/*   By: kali <kali@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 01:12:19 by lconiau           #+#    #+#             */
-/*   Updated: 2024/04/20 16:45:52 by lconiau          ###   ########.fr       */
+/*   Updated: 2024/05/14 04:52:22 by kali             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_list
 	struct s_list	*next;
 }		t_list;
 
+void	ft_memdel(void **ap);
 int			ft_strcmp(const char *first, const char *second);
 int			ft_atoi(const char *string);
 void		ft_bzero(void *s, size_t n);
@@ -39,6 +40,7 @@ int			ft_memcmp(const void *p1, const void *p2, size_t size);
 char		*ft_strchr(const char *string, int searchedChar);
 size_t		ft_strlcat(char *dst, const char *src, size_t size);
 size_t		ft_strlcpy(char *dst, const char *src, size_t size);
+char 		*ft_strcpy(char *dst, const char *src);
 size_t		ft_strlen(const char *string);
 int			ft_strncmp(const char *first, const char *secosnd, int lenght);
 char		*ft_strnstr(const char *fullString, const char *substr, size_t len);
@@ -47,6 +49,7 @@ int			ft_tolower(int c);
 int			ft_toupper(int c);
 void		*ft_calloc(size_t elementCount, size_t elementSize);
 char		*ft_strdup(const char *source);
+char		*ft_strndup(const char *src, size_t size)
 char		*ft_substr(const char *s, unsigned int start, size_t len);
 char		*ft_strjoin(char *s1, char *s2);
 char		*ft_strtrim(const char *s1, const char *set);
@@ -67,6 +70,5 @@ void		ft_lstdelone(t_listlib *lst, void (*del)(void*));
 void		ft_lstclear(t_listlib **lst, void (*del)(void*));
 void		ft_lstiter(t_listlib *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_listlib *lst, void *(*f)(void *), void (*del)(void *));
-char 	*ft_strlcpy(char *dst, const char *src);
 
 #endif
